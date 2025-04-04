@@ -247,14 +247,16 @@ def load_model(model_name, dataset_name):
             elif model_name == 'plantvillage_resnet50':
                 model = tf.keras.models.load_model("plant-village_disease_model_resnet50.keras")
                 target_size = (224, 224)
-            class_name = ['Apple scab', 'Apple rust', 'Apple healthy','Blueberry healthy', 'Cherry Powdery mildew', 'Cherry healthy',
-                          'Corn Cercospora leaf spot', 'Corn Common rust', 'Corn Northern leaf blight', 'Corn healthy',
-                          'Grape Black rot', 'Grape Esca', 'Grape Leaf blight', 'Grape healthy',
-                          'Orange Haunglongbing', 'Peach Bacterial spot', 'Peach healthy',
-                          'Pepper Bacterial spot', 'Pepper healthy', 'Potato Early blight', 'Potato Late blight', 'Potato healthy',
-                          'Raspberry healthy', 'Soybean healthy', 'Squash Powdery mildew', 'Strawberry Leaf scorch', 'Strawberry healthy',
-                          'Tomato Bacterial spot', 'Tomato Early blight', 'Tomato Late blight', 'Tomato Leaf mold', 'Tomato Septoria leaf spot',
-                          'Tomato Spider mites', 'Tomato Target spot', 'Tomato Yellow leaf curl virus', 'Tomato Mosaic virus', 'Tomato healthy']
+            class_name = ['Apple Scab','Apple Black Rot','Cedar Apple Rust','Apple healthy',
+                          'Bell Pepper healthy','Bell Pepper Bacterial Spot',
+                          'Cherry healthy','Cherry Powdery Mildew',
+                          'Corn Common Rust','Corn healthy','Corn Northern Leaf Blight','Corn Cercospora Leaf Spot',
+                          'Grape Black Rot','Grape Black Measles','Grape Leaf Blight','Grape healthy',
+                          'Peach Bacterial Spot','Peach healthy',
+                          'Potato Early Blight','Potato healthy','Potato Late Blight',
+                          'Strawberry Healthy','Strawberry Leaf Scorch',
+                          'Tomato Bacterial Spot','Tomato Early Blight','Tomato Late Blight',
+                          'Tomato Septoria Leaf Spot','Tomato Yellow Leaf Curl Virus','Tomato healthy']
         
         return model, target_size, class_name
     except Exception as e:
@@ -575,18 +577,16 @@ elif app_mode == "Visualisation":
             if st.button("Analyze Image"):
                 with st.spinner("Processing image..."):
                     result_index = model_prediction(test_image, model, target_size)
-                class_name = ['Apple scab', 'Apple rust', 'Apple healthy','Blueberry healthy', 
-                                'Cherry Powdery mildew', 'Cherry healthy', 'Corn Cercospora leaf spot', 
-                                'Corn Common rust', 'Corn Northern leaf blight', 'Corn healthy',
-                                'Grape Black rot', 'Grape Esca', 'Grape Leaf blight', 'Grape healthy',
-                                'Orange Haunglongbing', 'Peach Bacterial spot', 'Peach healthy',
-                                'Pepper Bacterial spot', 'Pepper healthy', 'Potato Early blight', 
-                                'Potato Late blight', 'Potato healthy', 'Raspberry healthy', 
-                                'Soybean healthy', 'Squash Powdery mildew', 'Strawberry Leaf scorch', 
-                                'Strawberry healthy', 'Tomato Bacterial spot', 'Tomato Early blight', 
-                                'Tomato Late blight', 'Tomato Leaf mold', 'Tomato Septoria leaf spot',
-                                'Tomato Spider mites', 'Tomato Target spot', 
-                                'Tomato Yellow leaf curl virus', 'Tomato Mosaic virus', 'Tomato healthy']
+                    class_name = ['Apple Scab','Apple Black Rot','Cedar Apple Rust','Apple healthy',
+                                'Bell Pepper healthy','Bell Pepper Bacterial Spot',
+                                'Cherry healthy','Cherry Powdery Mildew',
+                                'Corn Common Rust','Corn healthy','Corn Northern Leaf Blight','Corn Cercospora Leaf Spot',
+                                'Grape Black Rot','Grape Black Measles','Grape Leaf Blight','Grape healthy',
+                                'Peach Bacterial Spot','Peach healthy',
+                                'Potato Early Blight','Potato healthy','Potato Late Blight',
+                                'Strawberry Healthy','Strawberry Leaf Scorch',
+                                'Tomato Bacterial Spot','Tomato Early Blight','Tomato Late Blight',
+                                'Tomato Septoria Leaf Spot','Tomato Yellow Leaf Curl Virus','Tomato healthy']
                 
                  # Replace with actual class names
                 # st.success(f"Detected Condition: {class_name[result_index]}")
