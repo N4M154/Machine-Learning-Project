@@ -64,7 +64,7 @@ EfficientNet outperformed other models, while InceptionV3 (18.07%) and DenseNet1
 - **VanillaCNN**: Baseline CNN trained from scratch.  
 
 ### Explainable AI (XAI)
-- **Grad-CAM**: Visualizes model focus areas with heatmaps (red/yellow: high attention, blue: low attention).  
+- **Grad-CAM**: Visualizes model focus areas with heatmaps (red: high attention, blue: low attention).  
 
 ---
 
