@@ -146,7 +146,7 @@ Users can upload leaf images, and the app uses our trained deep learning model t
 
 4. **Get the models**:
 
-   Run all the notebooks; download the `keras` files and add them in the <PlantCare> folder. Two models are added already.
+   Run all the notebooks; download the `keras` files and add them in the `PlantCare` folder. Two models are added already.
 
 5. **Get Started**:
    ```bash
