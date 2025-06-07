@@ -110,7 +110,7 @@ Users can upload leaf images, and the app uses our trained deep learning model t
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.10+
 - Git
 - Virtual environment (optional but recommended)
 
@@ -129,13 +129,26 @@ Users can upload leaf images, and the app uses our trained deep learning model t
    <venv_name>\Scripts\activate
    ```
 
+   `OR`
+
+   use conda virtual environment
+
+   ```bash
+   conda create --name <env_name>
+   conda activate
+   ```
+
 3. **Install Dependencies**:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Get Started**:
+4. **Get the models**:
+
+   Run all the notebooks; download the `keras` files and add them in the <PlantCare> folder. Two models are added already.
+
+5. **Get Started**:
    ```bash
    streamlit run Plant.py
    ```
